@@ -1,5 +1,10 @@
+@media(max-width: 700px) {
+    
+}
+
 body {
     font-family: 'Roboto', sans-serif;
+    background: #EEEEEE;
 }
 
 header {
@@ -12,6 +17,11 @@ header {
     left: 0;
 }
 
+main {
+    margin-top: 123px;
+    margin-left: 19px;
+}
+
 .titles {
     margin-left: 21px;
     padding-top: 8px;
@@ -19,8 +29,6 @@ header {
 
 h1 {
     font-size: 44px;
-    font-family: 'Righteous', cursive;
-
 }
 
 h2 {
@@ -29,4 +37,37 @@ h2 {
 
 h1, h2 {
     color: white;
+}
+
+h1, label {
+    font-family: 'Righteous', cursive;
+}
+
+label {
+    font-size: 26px;
+}
+
+ul {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    margin-top: 7px;
+    margin-bottom: 27px;
+}
+
+li {
+    min-width: 172px;
+    height: 216px;
+    background: white;
+    margin-right: 16px;
+}
+
+li .description {
+    margin-left: 14px;
+}
+
+img {
+    margin-top: 18px;
+    width: 144px;
+    height: 87px;
 }
