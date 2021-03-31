@@ -1,6 +1,8 @@
 const dishes = document.querySelectorAll(".dish-clicked");
-const desserts = document.querySelectorAll("#dessert");
-const drinks = document.querySelectorAll("#drink");
+const desserts = document.querySelectorAll(".dessert-clicked");
+const drinks = document.querySelectorAll(".drink-clicked");
+const icon = document.querySelectorAll(".icon");
+const buttonCloseOrder = document.querySelector(".close-order");
 
 let dishesCount = 0;
 let dessertsCount = 0;
@@ -50,7 +52,19 @@ function changeLiStyle(li, counter) {
                 previousLiDrinks = li;
             }
             break;
-    }
+    };
+
+    const closeOrder = dishesCount === 1 && dessertsCount === 1 && drinksCount === 1;
+    if(closeOrder) {
+
+        buttonCloseOrder.innerHTML = "Fechar pedido";
+        buttonCloseOrder.classList.add("close-order-clicked");
+
+        buttonCloseOrder.addEventListener("click", function () {
+
+        });
+    };
+
 };
 
 dishes.forEach(li => {
