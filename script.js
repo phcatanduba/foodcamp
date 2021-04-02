@@ -1,11 +1,19 @@
 const dishes = document.querySelectorAll(".dishes li");
 const desserts = document.querySelectorAll(".desserts li");
 const drinks = document.querySelectorAll(".drinks li");
-const icon = document.querySelectorAll(".icon");
 const buttonCloseOrder = document.querySelector(".close-order");
+const closingScreen = document.querySelector(".unconfirmed");
 
 let applyStyleArray = [];
 let dish, dessert, drink;
+
+let dishPrice;
+let dessertPrice;
+let drinkPrice;
+
+let dishName;
+let dessertName;
+let drinkName;
 
 dishes.forEach(li => {
     listen(li, "dish");
@@ -20,7 +28,7 @@ drinks.forEach(li => {
 function listen(li, liType) {
     li.addEventListener("click", function() {
         changeLiStyle(li, liType);
-        closeOrder();
+        changeButtonStyleAndListen();
     });
 }
 
@@ -68,7 +76,7 @@ function addAndRemoveLiStyle(li, index) {
     applyStyleArray[index] = li;
 }
 
-function closeOrder() {
+function changeButtonStyleAndListen() {
     let count = 0;
     let wppMsg, encodeMsg;
 
@@ -81,9 +89,9 @@ function closeOrder() {
         buttonCloseOrder.classList.add("close-order-click");
         buttonCloseOrder.innerHTML = "Fechar pedido";
 
-        encodeMsg   = encodeURIComponent(message());
-        wppMsg      = "https://wa.me/351915507795?text=" + encodeMsg;
-        buttonCloseOrder.parentElement.setAttribute("href", wppMsg);
+        buttonCloseOrder.addEventListener("click", function() {
+            closeOrder();
+        });        
     };
 };
 
@@ -105,5 +113,34 @@ function message() {
     Total: R$ ${price.toFixed(2)}`;
 
     return msg;
+};
+
+function closeOrder() {
+    let confirmButton = closingScreen.querySelector(".buttons").children[0];
+    let cancelButton = closingScreen.querySelector(".buttons").children[1];
+
+    encodeMsg   = encodeURIComponent(message());
+    wppMsg      = "https://wa.me/351915507795?text=" + encodeMsg;
+
+    closingScreen.children[0].querySelector(".confirm-dish").children[0].innerHTML = dishName;
+    closingScreen.children[0].querySelector(".confirm-dish").children[1].innerHTML = dishPrice;
+
+    closingScreen.children[0].querySelector(".confirm-drink").children[0].innerHTML = drinkName;
+    closingScreen.children[0].querySelector(".confirm-drink").children[1].innerHTML = drinkPrice;
+
+    closingScreen.children[0].querySelector(".confirm-dessert").children[0].innerHTML = dessertName;
+    closingScreen.children[0].querySelector(".confirm-dessert").children[1].innerHTML = dessertPrice;
+
+    let price = Number(dishPrice) + Number(dessertPrice) + Number(drinkPrice);
+    closingScreen.children[0].querySelector(".total-price").children[1].innerHTML = price.toFixed(2);
+
+    closingScreen.classList.add("confirmed");
+    confirmButton.addEventListener("click", function () {
+        confirmButton.setAttribute("href", wppMsg);
+    });
+
+    cancelButton.addEventListener("click", function () {
+        closingScreen.classList.remove("confirmed");
+    });
 };
 

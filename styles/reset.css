@@ -53,4 +53,9 @@ strong {
 
 * {
     box-sizing: border-box;
+	-webkit-tap-highlight-color: transparent;
+}
+
+a, a:hover, a:active, a:visited, a:focus {
+    text-decoration:none;
 }

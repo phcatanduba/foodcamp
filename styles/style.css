@@ -184,7 +184,7 @@ button div {
     align-items: center;
     width: 303px;
     margin: 0 auto;
-    margin-bottom: 26px;
+    margin-bottom: 22px;
     color: white;
 }
 
@@ -200,22 +200,32 @@ button div {
 }
 
 .confirm {
+    display: flex;
     font-size: 22px;
     width: 320px;
     height: 52px;
     border-radius: 100px;
     background-color: white;
     color: #50D074;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
 }
 
 .cancel {
     background-color: #50D074;
     color: white;
     font-size: 22px;
-    margin-top: 25px;
+    margin-top: 10px;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 button {
     border: none;
+    outline: none;
+}
+
+.close-order:focus{
     outline: none;
 }
