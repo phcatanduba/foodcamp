@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">s
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FoodCamp</title>
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/style.css">
@@ -12,12 +12,42 @@
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <div class="unconfirmed">
+        <div class="box-confirm">
+            <p>
+                Confirme seu pedido
+            </p>
+            <div class="confirm-dish">
+                <span class="item-name">teste</span><span>teste</span>
+            </div>
+            <div class="confirm-drink">
+                <span class="item-name"></span>
+                <span></span>
+            </div>
+            <div class="confirm-dessert">
+                <span class="item-name"></span>
+                <span></span>
+            </div>
+            <div class="total-price">
+                <span>TOTAL</span>
+                <span>5</span>
+            </div>
+            <div class="buttons">
+                <button class="confirm">
+                    Tudo certo, pode pedir!
+                </button>
+                <button class="cancel">
+                    Cancelar
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="logo">
         <div class="titles">
             <h1>FoodCamp</h1>
             <h2>Sua comida em 6 minutos</h2>
         </div>
-    </header>
+    </logo>
     <main>
         <label>
             Primeiro, seu prato
@@ -29,7 +59,7 @@
                     <p class="item-name">Frango Yin Yang</p>
                     <p>Um pouco de batata,</p>
                     <p>um pouco de salada</p>
-                    <div class="price">
+                    <div class="price" value="14.90">
                         R$14,90
                     </div>
                 </div>
@@ -41,7 +71,7 @@
                     <p class="item-name">Frango Yin Yang</p>
                     <p>Um pouco de batata,</p>
                     <p>um pouco de salada</p>
-                    <div class="price">
+                    <div class="price" value="14.90">
                         R$14,90
                     </div>
                 </div>
@@ -53,7 +83,7 @@
                     <p class="item-name">Frango Yin Yang</p>
                     <p>Um pouco de batata,</p>
                     <p>um pouco de salada</p>
-                    <div class="price">
+                    <div class="price" value="14.90">
                         R$14,90
                     </div>
                 </div>
@@ -65,7 +95,7 @@
                     <p class="item-name">Frango Yin Yang</p>
                     <p>Um pouco de batata,</p>
                     <p>um pouco de salada</p>
-                    <div class="price">
+                    <div class="price" value="14.90">
                         R$14,90
                     </div>
                 </div>
@@ -81,7 +111,7 @@
                     <img src="images/coca.png" alt="coca">
                     <p class="item-name">Coquinha gelada</p>
                     <p>Lata de 350ml</p>
-                    <div class="price">
+                    <div class="price" value="4.90">
                         R$4,90
                     </div>
                 </div>
@@ -92,7 +122,7 @@
                     <img src="images/coca.png" alt="coca">
                     <p class="item-name">Coquinha gelada</p>
                     <p>Lata de 350ml</p>
-                    <div class="price">
+                    <div class="price" value="4.90">
                         R$4,90
                     </div>
                 </div>
@@ -103,7 +133,7 @@
                     <img src="images/coca.png" alt="coca">
                     <p class="item-name">Coquinha gelada</p>
                     <p>Lata de 350ml</p>
-                    <div class="price">
+                    <div class="price" value="4.90">
                         R$4,90
                     </div>
                 </div>
@@ -114,7 +144,7 @@
                     <img src="images/coca.png" alt="coca">
                     <p class="item-name">Coquinha gelada</p>
                     <p>Lata de 350ml</p>
-                    <div class="price">
+                    <div class="price" value="4.90">
                         R$4,90
                     </div>
                 </div>
@@ -130,7 +160,7 @@
                     <img src="images/pudim.png" alt="pudim">
                     <p class="item-name">Pudim</p>
                     <p>Apenas pudim</p>
-                    <div class="price">
+                    <div class="price" value="7.90">
                         R$7,90
                     </div>
                 </div>
@@ -141,7 +171,7 @@
                     <img src="images/pudim.png" alt="pudim">
                     <p class="item-name">Pudim</p>
                     <p>Apenas pudim</p>
-                    <div class="price">
+                    <div class="price" value="7.90">
                         R$7,90
                     </div>
                 </div>
@@ -152,7 +182,7 @@
                     <img src="images/pudim.png" alt="pudim">
                     <p class="item-name">Pudim</p>
                     <p>Apenas pudim</p>
-                    <div class="price">
+                    <div class="price" value="7.90">
                         R$7,90
                     </div>
                 </div>
@@ -163,7 +193,7 @@
                     <img src="images/pudim.png" alt="pudim">
                     <p class="item-name">Pudim</p>
                     <p>Apenas pudim</p>
-                    <div class="price">
+                    <div class="price" value="7.90">
                         R$7,90
                     </div>
                 </div>
@@ -172,10 +202,13 @@
         </ul>     
     </main>
     <footer>
-        <button class="close-order">
-            <div>Selecione os 3 itens para fechar o pedido</div>
-        </button>
+        <a>
+            <button class="close-order">
+                <div>Selecione os 3 itens para fechar o pedido</div>
+            </button>
+        </a>
     </footer>
+
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <script src="script.js"></script>
 </body>
