@@ -3,6 +3,7 @@ const desserts = document.querySelectorAll(".desserts li");
 const drinks = document.querySelectorAll(".drinks li");
 const buttonCloseOrder = document.querySelector(".close-order");
 const closingScreen = document.querySelector(".unconfirmed");
+const screen = document.querySelector("body");
 
 let applyStyleArray = [];
 let dish, dessert, drink;
