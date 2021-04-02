@@ -136,8 +136,9 @@ footer {
     color: white;
 }
 
-button.close-order-clicked{
+button.close-order-click{
     background-color: #32B72F;
+    cursor: pointer;
 }
 
 button div {
